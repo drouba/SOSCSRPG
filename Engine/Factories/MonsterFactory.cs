@@ -8,7 +8,7 @@ namespace Engine.Factories
 {
     public class MonsterFactory
     {
-        public static MonsterFactory GetMonster(int monsterID)
+        public static Monster GetMonster(int monsterID)
         {
             switch (monsterID)
             {
