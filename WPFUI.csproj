@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Engine\Engine.csproj" />
+    <Compile Remove="Engine\**" />
+    <EmbeddedResource Remove="Engine\**" />
+    <None Remove="Engine\**" />
+    <Page Remove="Engine\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Engine\Engine.csproj" />
   </ItemGroup>
 
 </Project>
