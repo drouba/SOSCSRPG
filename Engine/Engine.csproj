@@ -21,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\Monsters\GiantSpider.png" />
+    <Resource Include="Images\Monsters\GiantSpider.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -37,8 +39,12 @@
     <Resource Include="Images\Locations\SpiderForest.png" />
     <Resource Include="Images\Locations\TownSquare.png" />
     <Resource Include="Images\Locations\Trader.png" />
-    <Resource Include="Images\Monsters\Rat.png" />
-    <Resource Include="Images\Monsters\Snake.png" />
+    <Resource Include="Images\Monsters\Rat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Monsters\Snake.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

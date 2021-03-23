@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SOSCSRPG"
+        xmlns:local="clr-namespace:SOSCSRPG" xmlns:viewmodels="clr-namespace:Engine.ViewModels;assembly=Engine" d:DataContext="{d:DesignInstance Type=viewmodels:GameSession}"
         mc:Ignorable="d"
         FontSize="11pt"
         Title="MyGame" Height="768" Width="1024">
@@ -157,7 +157,7 @@
         </Grid> 
 
         
-        
+        <!-- Inventory and Quest -->
         <Grid Grid.Row="2" Grid.Column="0" Background="#6f65a8" >
 
             <TabControl>
@@ -205,7 +205,7 @@
             
         </Grid>
         
-        
+        <!-- Action Controls -->
         <Grid Grid.Row="2" Grid.Column="1" Background="#a2d4e8">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -215,7 +215,38 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="255"/>
             </Grid.ColumnDefinitions>
+            
+            <!-- Combat Controls -->
+            <Grid Grid.Row="0" Grid.Column="0"
+                  Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisibility}}"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.Row="0" Grid.Column="0"
+                          ItemsSource="{Binding CurrentPlayer.Weapons}"
+                          SelectedItem="{Binding CurrentWeapon}"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="ID"/>
+
+                <Button Grid.Row="0" Grid.Column="2"
+                        Content="Use"
+                        Click="OnClick_AttackMonster"/>
+
+            </Grid>
+            
+            
+            
+            <!-- Movement Controls -->
             <Grid Grid.Row="0" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
