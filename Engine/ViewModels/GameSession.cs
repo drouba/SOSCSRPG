@@ -212,7 +212,7 @@ namespace Engine.ViewModels
                     RaiseMessage($" {quest.RewardGold} gold");
                     foreach(ItemQuantity itemQuantity in quest.RewardItems)
                     {
-                        RaiseMessage($" {itemQuantity.Quantity} {ItemFactory.CreateGameItem(itemQuantity.ItemID.Name}");
+                        RaiseMessage($" {itemQuantity.Quantity} {ItemFactory.CreateGameItem(itemQuantity.ItemID).Name}");
 
                     }
 
